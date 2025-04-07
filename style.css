@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --primary-color: #6a11cb; /* Ungu */
+    --secondary-color: #2575fc; /* Biru */
+    --background-gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    --card-background: #ffffff;
+    --text-color: #333;
+    --text-light: #f8f9fa;
+    --border-color: #e0e0e0;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    --border-radius: 15px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.7;
+    color: var(--text-color);
+    background: var(--background-gradient);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align top */
+    min-height: 100vh;
+    padding: 30px 15px;
+}
+
+.container {
+    max-width: 900px;
+    width: 100%;
+    background-color: transparent; /* Container utama transparan */
+    padding: 0; /* Padding dihapus dari container utama */
+    border-radius: var(--border-radius);
+    text-align: center;
+}
+
+header {
+    margin-bottom: 30px;
+    color: var(--text-light);
+}
+
+header h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+header p {
+    font-size: 1.1em;
+}
+
+.calculator-card {
+    background-color: var(--card-background);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 30px;
+}
+
+.calculator-card h2 {
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+#results-table-container {
+    overflow-x: auto; /* Memungkinkan scroll horizontal jika tabel terlalu lebar */
+    margin-bottom: 25px;
+    background-color: #fff; /* Background putih untuk area screenshot */
+    padding: 15px; /* Padding internal untuk area screenshot */
+    border-radius: 10px; /* Rounded corner untuk area screenshot */
+}
+
+table {
+    width: 100%;
+    border-collapse: separate; /* Gunakan separate untuk border-radius */
+    border-spacing: 0;
+    margin-top: 15px;
+    font-size: 0.95em;
+    border: 1px solid var(--border-color); /* Border luar */
+    border-radius: 10px; /* Rounded corner untuk tabel */
+    overflow: hidden; /* Penting untuk border-radius */
+}
+
+th, td {
+    border-bottom: 1px solid var(--border-color);
+    padding: 12px 15px;
+    text-align: left;
+    vertical-align: middle; /* Tengah secara vertikal */
+}
+
+th {
+    background: linear-gradient(135deg, #717ff5, #5b67e0); /* Gradien header lebih ringan */
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Hilangkan border bawah pada baris terakhir */
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Zebra stripes */
+tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+
+td:first-child {
+    font-weight: 600;
+    color: var(--primary-color);
+    min-width: 180px; /* Lebar minimum kolom mata kuliah */
+}
+
+td:nth-child(2) { /* SKS */
+    text-align: center;
+    font-weight: bold;
+}
+
+td input[type="number"] {
+    width: 70px; /* Lebar input */
+    padding: 8px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    text-align: center;
+    font-size: 0.95em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+td input[type="number"]:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 5px rgba(106, 17, 203, 0.3);
+}
+
+/* Style untuk kolom hasil */
+.grade-angka { font-weight: bold; }
+.grade-huruf { font-weight: bold; text-align: center; }
+.grade-indeks { font-weight: bold; text-align: center; }
+
+/* Warna berdasarkan Nilai Huruf */
+.grade-A { color: var(--success-color); }
+.grade-A-minus { color: #20c997; } /* Teal */
+.grade-B-plus { color: #17a2b8; } /* Info */
+.grade-B { color: #0d6efd; } /* Primary */
+.grade-B-minus { color: var(--secondary-color); }
+.grade-C-plus { color: var(--warning-color); }
+.grade-C { color: #fd7e14; } /* Orange */
+.grade-D { color: var(--danger-color); }
+.grade-E { color: #6c757d; } /* Secondary/Gray */
+
+.summary {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+}
+
+.summary h3 {
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.summary h2 {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+#finalGpa {
+    color: var(--success-color); /* Highlight GPA final */
+    font-size: 1.3em;
+}
+
+.action-button {
+    background: var(--background-gradient);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px; /* Tombol lebih bulat */
+    cursor: pointer;
+    font-size: 1.05em;
+    font-weight: 600;
+    margin-top: 25px;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; /* Jarak antara ikon dan teks */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.action-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.action-button:active {
+    transform: translateY(0);
+}
+
+footer {
+    margin-top: 40px;
+    color: var(--text-light);
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+.scale-info {
+    font-size: 0.8em;
+    margin-top: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    body { padding: 15px; }
+    header h1 { font-size: 1.8em; }
+    header p { font-size: 1em; }
+    .calculator-card { padding: 20px; }
+    th, td { padding: 10px 8px; font-size: 0.9em; }
+    td input[type="number"] { width: 60px; padding: 6px 8px; }
+    td:first-child { min-width: 150px; }
+    .action-button { width: 100%; justify-content: center; }
+}
+
+@media (max-width: 480px) {
+    header h1 { font-size: 1.5em; }
+    th, td { font-size: 0.8em; }
+    td:first-child { min-width: 120px; }
+    td input[type="number"] { width: 50px; }
+}

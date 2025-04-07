@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator IP Semester Seru!</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>✨ Kalkulator IP Semester Seru! ✨</h1>
+            <p>Hitung Indeks Prestasimu dengan mudah dan menyenangkan!</p>
+        </header>
+
+        <div class="calculator-card">
+            <h2>Masukkan Nilaumu 💯</h2>
+            <div id="results-table-container"> <table id="coursesTable">
+                    <thead>
+                        <tr>
+                            <th>Mata Kuliah</th>
+                            <th>SKS</th>
+                            <th>Nilai AKT</th>
+                            <th>Nilai UTS</th>
+                            <th>Nilai UAS</th>
+                            <th>Nilai Angka</th>
+                            <th>Nilai Huruf</th>
+                            <th>Indeks</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        </tbody>
+                </table>
+            </div>
+
+            <div class="summary">
+                <h3>Total SKS: <span id="totalSks">0</span></h3>
+                <h2>Indeks Prestasi Semester (IPS): <span id="finalGpa">0.00</span></h2>
+            </div>
+
+            <button id="downloadBtn" class="action-button">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#FFFFFF"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M19 9h-4V3H9v6H5l7 7 7-7zm-8 2V5h2v6h1.17L12 13.17 9.83 11H11zm-6 7h14v2H5v-2z"/></svg>
+                Simpan Hasil (Gambar)
+            </button>
+        </div>
+
+
+        <footer>
+            <p>Dibuat dengan ❤️ | Semoga hasilnya memuaskan!</p>
+            <p class="scale-info">Skala Nilai: A=4.0, A-=3.7, B+=3.3, B=3.0, B-=2.7, C+=2.3, C=2.0, D=1.0, E=0.0</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
