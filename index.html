@@ -17,7 +17,13 @@
 
         <div class="calculator-card">
             <h2>Masukkan Nilaumu 💯</h2>
-            <div id="results-table-container"> <table id="coursesTable">
+
+            <div class="ocr-section">
+                <label for="imageUpload" class="ocr-label">Atau coba upload screenshot nilai dari web kampus:</label>
+                <input type="file" id="imageUpload" accept="image/*">
+                <div id="ocrStatus"></div> </div>
+            <div id="results-table-container">
+                <table id="coursesTable">
                     <thead>
                         <tr>
                             <th>Mata Kuliah</th>
@@ -48,10 +54,10 @@
 
 
         <footer>
-            <p>Dibuat dengan ❤️ | Semoga hasilnya memuaskan!</p>
+            <p>Dibuat dengan ❤️ | Semoga bermanfaat!</p>
             <p class="scale-info">Skala Nilai: A=4.0, A-=3.7, B+=3.3, B=3.0, B-=2.7, C+=2.3, C=2.0, D=1.0, E=0.0</p>
         </footer>
-    </div>
+    </div> <script src='https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js'></script>
 
     <script src="script.js"></script>
 </body>
