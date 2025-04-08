@@ -243,3 +243,34 @@ footer {
     td:first-child { min-width: 120px; }
     td input[type="number"] { width: 50px; }
 }
+
+/* ... (CSS yang sudah ada) ... */
+
+.ocr-section {
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border: 1px dashed var(--secondary-color);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.ocr-label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+#imageUpload {
+    display: inline-block; /* Atau block jika ingin full width */
+    margin-bottom: 10px;
+    /* Style default browser biasanya cukup, tapi bisa di-custom jika perlu */
+}
+
+#ocrStatus {
+    margin-top: 10px;
+    font-style: italic;
+    color: #555;
+    min-height: 20px; /* Agar layout tidak lompat saat teks muncul */
+}
