@@ -123,6 +123,7 @@ function downloadScreenshot() {
     // Target elemen utama kartu kalkulator
     const elementToCapture = document.querySelector('.calculator-card');
     const downloadButton = document.getElementById('downloadBtn');
+    const ocr = document.querySelector('.ocr-section');
 
     if (!elementToCapture) {
         console.error("Elemen .calculator-card tidak ditemukan!");
@@ -132,6 +133,7 @@ function downloadScreenshot() {
 
     // Sembunyikan tombol sementara agar tidak ikut tercapture
     downloadButton.style.display = 'none';
+    ocr.style.display = 'none';
 
     console.log("Mengambil screenshot dari .calculator-card..."); // Log
 
